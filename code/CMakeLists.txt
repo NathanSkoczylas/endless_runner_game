@@ -30,6 +30,12 @@ add_executable(${PROJECT_NAME}
 	${projectHEADERS}
 )
 
+
+# Link libraries
+target_link_libraries(${PROJECT_NAME} 
+	raylib
+)
+
 # Set the install directory for the executable
 install(TARGETS ${PROJECT_NAME}
 	CONFIGURATIONS Debug
