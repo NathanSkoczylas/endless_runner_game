@@ -18,5 +18,8 @@ message (" Project Name: ${PROJECT_NAME} \n Root Directory: ${ROOT_DIR}")
 message ("****************************************")
 
 
+# Thirdparty directory
+add_subdirectory(thirdparty/raylib/raylib)
+
 # Add subdirectories
 add_subdirectory(code)
