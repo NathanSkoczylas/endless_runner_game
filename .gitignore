@@ -1,0 +1,5 @@
+# Build Dir
+build
+
+# Thirdparty Dir
+thirdparty/raylib
