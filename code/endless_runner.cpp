@@ -1,6 +1,7 @@
 #include <iostream>
 
-#include "raylib.h"
+
+#include "EndlessRunner.hpp"
 
 
 // ----------------------------------------------------------------------------
@@ -9,23 +10,17 @@
 int main() {
 	std::cout << "Endless Runner" << std::endl;
 	
-	// Window Parameters
-	int windowWidth{ 800 };
-	int windowHeight{ 450 };
-	InitWindow(windowWidth, windowHeight, "Endless Runner");
-	Color backgroundColor{ WHITE };
-	SetTargetFPS(60);
+	UP::EndlessRunner endlessRunnerGame;
+	bool initSuccessful = endlessRunnerGame.initialize();
 
 	// Game loop
-	while (!WindowShouldClose()) {
-		BeginDrawing();
+	while (initSuccessful && endlessRunnerGame.isRunning()) {
 
-		ClearBackground(backgroundColor);
-
-		EndDrawing();
+		endlessRunnerGame.update();
+		
 	}
 
-	CloseWindow();
-	
+	endlessRunnerGame.stop();
+		
 	return 0;
 }

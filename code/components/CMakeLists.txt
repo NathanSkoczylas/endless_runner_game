@@ -3,9 +3,9 @@ cmake_minimum_required(VERSION 3.25)
 
 # Set project name
 project(
-	main_game
+	components
 	VERSION 1.0.0
-	DESCRIPTION "Main Game"
+	DESCRIPTION "Game Components"
 )
 
 # Set the projects root directory
@@ -14,38 +14,40 @@ set(CODE_DIR ${PROJECT_SOURCE_DIR})
 message (" Project Name: ${PROJECT_NAME} \n Root Directory: ${CODE_DIR}")
 message ("****************************************")
 
-# Set sources for project
+# Set sources
 set(projectSOURCES
-	endless_runner.cpp
+	Object.cpp
 	
-	EndlessRunner.cpp
 )
 
-# Set headers for project
+# Set headers
 set(projectHEADERS
-	EndlessRunner.hpp
+	components.hpp
+
+	Object.hpp
+	
 )
 
-# Create executable target
-add_executable(${PROJECT_NAME} 
+
+#include_directories(
+#	${projectSOURCES}
+#	${projectHEADERS}
+#)
+
+add_library(components STATIC 
 	${projectSOURCES}
 	${projectHEADERS}
 )
 
 
-# Link libraries
-target_link_libraries(${PROJECT_NAME} 
-	raylib
-	components
-)
 
 # Set the install directory for the executable
-install(TARGETS ${PROJECT_NAME}
-	CONFIGURATIONS Debug
-	RUNTIME DESTINATION Debug/bin
-)
-		
-install(TARGETS ${PROJECT_NAME}
-	CONFIGURATIONS Release
-	RUNTIME DESTINATION Release/bin
-)
+#install(FILES ${PROJECT_NAME}
+#	CONFIGURATIONS Debug
+#	DESTINATION Libraries/bin
+#)
+#		
+#install(FILES ${PROJECT_NAME}
+#	CONFIGURATIONS Release
+#	DESTINATION Libraries/bin
+#)

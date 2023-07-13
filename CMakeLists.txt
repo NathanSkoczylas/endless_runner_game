@@ -21,5 +21,8 @@ message ("****************************************")
 # Thirdparty directory
 add_subdirectory(thirdparty/raylib/raylib)
 
+# My Libraries
+add_subdirectory(code/components)
+
 # Add subdirectories
 add_subdirectory(code)
