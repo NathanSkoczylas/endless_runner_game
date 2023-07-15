@@ -20,8 +20,21 @@ namespace Renderer {
 			Renderer();
 			virtual ~Renderer();
 
+			/**
+			* Update loop for renderer
+			* 
+			* @param float dt - delta time
+			*/
 			void update(float dt) override;
 
+			/**
+			* Initializes the rendering pipeline
+			*  - Creates window
+			*  - Set FPS
+			*  - Load textures
+			* 
+			* @return bool - true when successful
+			*/
 			bool initialize();
 
 

@@ -19,11 +19,33 @@ namespace UP {
 			EndlessRunner();
 			virtual ~EndlessRunner();
 			
+			/**
+			* Initializes all of the main components to run the game.
+			*
+			* @return bool - true if successful
+			*/
 			bool initialize();
+
+			/**
+			* Set's the game to running
+			*/
 			void start();
+
+			/**
+			* Stop's the game from running
+			*/
 			void stop();
 
+			/**
+			* The game's main update loop
+			*/
 			void update();
+
+			/**
+			* Returns if the game is running
+			* 
+			* @return bool - true when running
+			*/
 			bool isRunning();
 
 		protected:
