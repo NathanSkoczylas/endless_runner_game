@@ -25,21 +25,14 @@ set(projectHEADERS
 	components.hpp
 
 	Object.hpp
-	
 )
 
 
-#include_directories(
-#	${projectSOURCES}
-#	${projectHEADERS}
-#)
-
+# Create library
 add_library(components STATIC 
 	${projectSOURCES}
 	${projectHEADERS}
 )
-
-
 
 # Set the install directory for the executable
 #install(FILES ${PROJECT_NAME}

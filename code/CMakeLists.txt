@@ -14,16 +14,18 @@ set(CODE_DIR ${PROJECT_SOURCE_DIR})
 message (" Project Name: ${PROJECT_NAME} \n Root Directory: ${CODE_DIR}")
 message ("****************************************")
 
+
 # Set sources for project
 set(projectSOURCES
 	endless_runner.cpp
 	
 	EndlessRunner.cpp
-)
+)	
 
 # Set headers for project
 set(projectHEADERS
 	EndlessRunner.hpp
+	
 )
 
 # Create executable target
@@ -37,6 +39,7 @@ add_executable(${PROJECT_NAME}
 target_link_libraries(${PROJECT_NAME} 
 	raylib
 	components
+	renderer
 )
 
 # Set the install directory for the executable

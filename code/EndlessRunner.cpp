@@ -2,8 +2,11 @@
 
 #include "raylib.h"
 
+#include <cassert>
+
+
 namespace UP {
-	
+
 	EndlessRunner::EndlessRunner() {
 		// Constructor
 	}
@@ -11,27 +14,28 @@ namespace UP {
 	EndlessRunner::~EndlessRunner() {
 		// Destructor
 		stop();
+
 		CloseWindow();
 	}
 
 	bool EndlessRunner::initialize() {
-		// Window Parameters
-		const int windowWidth{ 800 };
-		const int windowHeight{ 450 };
-		InitWindow(windowWidth, windowHeight, "Endless Runner");
-		Color backgroundColor{ WHITE };
-		SetTargetFPS(60);
+		bool initSuccessful{ false };
 
+		if (m_renderer.initialize()) {
+			initSuccessful = true;
+		}
+
+		// Start Game
 		start();
 
-		return true;
+		return initSuccessful && isRunning();
 	}
 
 	void EndlessRunner::update() {
 
 		if (!isRunning()) {
 			// If the game isn't running, don't continue
-			return; 
+			return;
 		}
 
 		if (WindowShouldClose()) {
@@ -43,20 +47,15 @@ namespace UP {
 		m_dt = GetFrameTime();
 
 		// Handle input
-		//	networking
 		//	user controls
 
 		// Handle game world
 		//	game physics
 
-		// Handle output
-		//	rendering
+		// ** Handle output
+		// Rendering
+		m_renderer.update(m_dt);
 
-		BeginDrawing();
-
-		ClearBackground(WHITE);
-
-		EndDrawing();
 		
 	}
 
@@ -70,7 +69,6 @@ namespace UP {
 
 	void EndlessRunner::stop() {
 		m_running = false;
-		
 	}
 
 }

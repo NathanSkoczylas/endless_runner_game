@@ -1,39 +1,37 @@
 // ----------------------------------------------------------------------------
 // Nathan Skoczylas
-// Endless Runner class
 // ----------------------------------------------------------------------------
 
 #pragma once
 
 #include <string>
-#include <string_view>
 #include <memory>
 
-#include "renderer/Renderer.hpp"
+#include "../common/Update.hpp"
+
+#include "raylib.h"
 
 namespace UP {
+namespace Renderer {
 
-	class EndlessRunner {
+	class Renderer : public Update {
 
 		public:
-			EndlessRunner();
-			virtual ~EndlessRunner();
-			
-			bool initialize();
-			void start();
-			void stop();
+			Renderer();
+			virtual ~Renderer();
 
-			void update();
-			bool isRunning();
+			void update(float dt) override;
+
+			bool initialize();
+
 
 		protected:
 			
+			
 		private:
-			bool m_running{ false };
-			float m_dt{};
-
-			Renderer::Renderer m_renderer;
+			
 
 	};
 		
+} // end namespace
 } // end namespace

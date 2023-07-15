@@ -19,10 +19,16 @@ message ("****************************************")
 
 
 # Thirdparty directory
-add_subdirectory(thirdparty/raylib/raylib)
+set(THIRDPARTY_DIR thirdparty)
+set(RAYLIB_DIR ${THIRDPARTY_DIR}/raylib/raylib)
+message ("\n****************************************")
+message (" RayLib Directory: ${RAYLIB_DIR}")
+message ("****************************************")
+add_subdirectory(${RAYLIB_DIR})
 
 # My Libraries
 add_subdirectory(code/components)
+add_subdirectory(code/renderer)
 
 # Add subdirectories
 add_subdirectory(code)
