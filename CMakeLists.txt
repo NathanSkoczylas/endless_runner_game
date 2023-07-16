@@ -17,6 +17,12 @@ set(ROOT_DIR ${PROJECT_SOURCE_DIR})
 message (" Project Name: ${PROJECT_NAME} \n Root Directory: ${ROOT_DIR}")
 message ("****************************************")
 
+# Set the projects code directory
+message ("\n****************************************")
+set(CODE_DIR ${PROJECT_SOURCE_DIR}/code)
+message ("\n Code Directory: ${CODE_DIR}")
+message ("****************************************")
+
 
 # Thirdparty directory
 set(THIRDPARTY_DIR thirdparty)

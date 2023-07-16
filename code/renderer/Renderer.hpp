@@ -7,7 +7,7 @@
 #include <string>
 #include <memory>
 
-#include "../common/Update.hpp"
+#include "common/Update.hpp"
 
 #include "raylib.h"
 

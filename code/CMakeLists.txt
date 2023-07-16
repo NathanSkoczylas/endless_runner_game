@@ -8,18 +8,13 @@ project(
 	DESCRIPTION "Main Game"
 )
 
-# Set the projects root directory
-message ("\n****************************************")
-set(CODE_DIR ${PROJECT_SOURCE_DIR})
-message (" Project Name: ${PROJECT_NAME} \n Root Directory: ${CODE_DIR}")
-message ("****************************************")
-
 
 # Set sources for project
 set(projectSOURCES
 	endless_runner.cpp
 	
 	EndlessRunner.cpp
+	
 )	
 
 # Set headers for project

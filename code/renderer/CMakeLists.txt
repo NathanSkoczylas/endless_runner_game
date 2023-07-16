@@ -23,10 +23,16 @@ set(projectSOURCES
 
 # Set headers for project
 set(projectHEADERS
-	../common/Update.hpp
+	${CODE_DIR}/common/Update.hpp
+	${CODE_DIR}/common/Scene.hpp
 	
 	Renderer.hpp
 	TextureUtility.hpp
+)
+
+# Allows cleaner includes in code
+include_directories(
+	${CODE_DIR}
 )
 
 # Create library
